@@ -12,19 +12,20 @@ main = Blueprint('main', __name__)
 model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'model.h5'))
 
 # Labels and descriptions
-labels = ["bakso", "bebek_betutu", "gado_gado", "nasi_goreng", "pempek", "rawon", "rendang", "sate", "soto"]
-descriptions = {
-    "bakso": "Deskripsi Bakso",
-    "bebek_betutu": "Deskripsi Bebek Betutu",
-    "gado_gado": "Deskripsi Bebek Betutu",
-    "nasi_goreng": "Deskripsi Bebek Betutu",
-    "pempek": "Deskripsi Bebek Betutu",
-    "rawon": "Deskripsi Bebek Betutu",
-    "rendang": "Deskripsi Bebek Betutu",
-    "sate": "Deskripsi Bebek Betutu",
-    "soto": "Deskripsi Bebek Betutu",
-    # ... tambahkan deskripsi lainnya
-}
+foods = [
+    {"label": "bakso", "description": "Deskripsi Bakso"},
+    {"label": "bebek_betutu", "description": "Deskripsi Bebek Betutu"},
+    {"label": "gado_gado", "description": "Deskripsi Gado-Gado"},
+    {"label": "nasi_goreng", "description": "Deskripsi Nasi Goreng"},
+    {"label": "pempek", "description": "Deskripsi Pempek"},
+    {"label": "rawon", "description": "Deskripsi Rawon"},
+    {"label": "rendang", "description": "Deskripsi Rendang"},
+    {"label": "sate", "description": "Deskripsi Sate"},
+    {"label": "soto", "description": "Deskripsi Soto"}
+]
+
+labels = [food['label'] for food in foods]
+descriptions = {food['label']: food['description'] for food in foods}
 
 def preprocess_image(image):
     image = image.resize((224, 224))
@@ -51,3 +52,7 @@ def predict():
     }
     
     return jsonify(response)
+
+@main.route('/list', methods=['GET'])
+def list_foods():
+    return jsonify(foods)
