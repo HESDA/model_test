@@ -13,15 +13,15 @@ model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'mode
 
 # Labels and descriptions
 foods = [
-    {"name": "bakso", "desc": "Deskripsi Bakso", "carbo": "30g", "protein": "10g", "calory": "250 kkal", "lemak": "15g", "bahan": "daging sapi, tepung, bawang putih"},
-    {"name": "bebek_betutu", "desc": "Deskripsi Bebek Betutu", "carbo": "20g", "protein": "30g", "calory": "400 kkal", "lemak": "25g", "bahan": "bebek, bumbu kuning, daun pisang"},
-    {"name": "gado_gado", "desc": "Deskripsi Gado-Gado", "carbo": "35g", "protein": "15g", "calory": "300 kkal", "lemak": "10g", "bahan": "sayur-sayuran, tahu, tempe, saus kacang"},
-    {"name": "nasi_goreng", "desc": "Deskripsi Nasi Goreng", "carbo": "50g", "protein": "20g", "calory": "500 kkal", "lemak": "20g", "bahan": "nasi, kecap, telur, ayam"},
-    {"name": "pempek", "desc": "Deskripsi Pempek", "carbo": "40g", "protein": "15g", "calory": "350 kkal", "lemak": "15g", "bahan": "ikan, tepung, cuka"},
-    {"name": "rawon", "desc": "Deskripsi Rawon", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": "daging sapi, kluwek, bawang merah"},
-    {"name": "rendang", "desc": "Deskripsi Rendang", "carbo": "15g", "protein": "25g", "calory": "400 kkal", "lemak": "30g", "bahan": "daging sapi, santan, rempah-rempah"},
-    {"name": "sate", "desc": "Deskripsi Sate", "carbo": "20g", "protein": "25g", "calory": "350 kkal", "lemak": "20g", "bahan": "daging ayam, bumbu kacang"},
-    {"name": "soto", "desc": "Deskripsi Soto", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": "ayam, sayuran, bumbu kuning"}
+    {"name": "bakso", "desc": "Deskripsi Bakso", "carbo": "30g", "protein": "10g", "calory": "250 kkal", "lemak": "15g", "bahan": ["daging sapi", "tepung", "bawang putih"]},
+    {"name": "bebek_betutu", "desc": "Deskripsi Bebek Betutu", "carbo": "20g", "protein": "30g", "calory": "400 kkal", "lemak": "25g", "bahan": ["bebek", "bumbu kuning", "daun pisang"]},
+    {"name": "gado_gado", "desc": "Deskripsi Gado-Gado", "carbo": "35g", "protein": "15g", "calory": "300 kkal", "lemak": "10g", "bahan": ["sayur-sayuran", "tahu", "tempe", "saus kacang"]},
+    {"name": "nasi_goreng", "desc": "Deskripsi Nasi Goreng", "carbo": "50g", "protein": "20g", "calory": "500 kkal", "lemak": "20g", "bahan": ["nasi", "kecap", "telur", "ayam"]},
+    {"name": "pempek", "desc": "Deskripsi Pempek", "carbo": "40g", "protein": "15g", "calory": "350 kkal", "lemak": "15g", "bahan": ["ikan", "tepung", "cuka"]},
+    {"name": "rawon", "desc": "Deskripsi Rawon", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["daging sapi", "kluwek", "bawang merah"]},
+    {"name": "rendang", "desc": "Deskripsi Rendang", "carbo": "15g", "protein": "25g", "calory": "400 kkal", "lemak": "30g", "bahan": ["daging sapi", "santan", "rempah-rempah"]},
+    {"name": "sate", "desc": "Deskripsi Sate", "carbo": "20g", "protein": "25g", "calory": "350 kkal", "lemak": "20g", "bahan": ["daging ayam", "bumbu kacang"]},
+    {"name": "soto", "desc": "Deskripsi Soto", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["ayam", "sayuran", "bumbu kuning"]}
 ]
 
 labels = [food['name'] for food in foods]
